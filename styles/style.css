@@ -1,0 +1,278 @@
+body {
+  background-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("../img/bg.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.792);
+}
+
+@keyframes wave {
+  0% {
+    background-position: -200% 0;
+    text-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66;
+  }
+  50% {
+    background-position: 200% 0;
+    text-shadow: 0 0 15px #00ff66, 0 0 30px #00ff66;
+  }
+  100% {
+    background-position: -200% 0;
+    text-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66;
+  }
+}
+
+.header {
+  text-align: center;
+  padding: 10% 0 0 0;
+  font-family: "Rust";
+  font-size: 4rem;
+  background: linear-gradient(90deg, #00ff66, #e3e3e3, #00ff66);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: wave 5s ease infinite;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 3.5rem;
+    padding: 40% 0 0 0;
+  }
+}
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+  filter: blur(3px);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 8% 0 0 0;
+}
+
+.menu__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu__link {
+  position: relative;
+  display: inline-block;
+  width: 320px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #0000009d;
+  padding: 10px 30px;
+  transition: background 0.5s, color 0.5s;
+  border: 1px solid rgb(224, 224, 224);
+  font-weight: 600;
+}
+
+.menu__link:hover {
+  color: transparent;
+  background-image: linear-gradient(90deg, #00ff66, #e3e3e3, #00ff66);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: wave 5s ease infinite;
+  border: 1px solid;
+  border-image: linear-gradient(90deg, #00ff66, #e3e3e3, #00ff66) 1;
+}
+
+.menu__link span {
+  position: absolute;
+  display: block;
+  background: var(--clr);
+  box-shadow: 0 0 5px var(--clr);
+}
+
+.menu__link span:nth-child(1) {
+  left: 0;
+  top: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.menu__link:hover span:nth-child(1) {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.menu__link span:nth-child(2) {
+  right: 0;
+  top: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.menu__link:hover span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu__link span:nth-child(3) {
+  right: 0;
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transition-delay: 0.4s;
+}
+
+.menu__link:hover span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.menu__link span:nth-child(4) {
+  left: 0;
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transition-delay: 0.4s;
+}
+
+.menu__link:hover span:nth-child(4) {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.menu__link span:nth-child(5) {
+  left: 0;
+  bottom: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transition-delay: 0.8s;
+}
+
+.menu__link:hover span:nth-child(5) {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu__link span:nth-child(6) {
+  right: 0;
+  bottom: 0;
+  width: 50.5%;
+  height: 1.5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transition-delay: 0.8s;
+}
+
+.menu__link:hover span:nth-child(6) {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: center;
+  margin: 10% 0 0 0;
+}
+
+.footer__menu_item {
+  margin: 0 10px;
+}
+
+.footer__menu_link {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.footer__menu_link .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.footer__menu_link:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.footer__menu_link::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.footer__menu_link:hover::before {
+  top: 0;
+}
+
+.footer__menu_item:nth-child(1) .footer__menu_link::before {
+  background: #e4405f; /* Instagram */
+}
+
+.footer__menu_item:nth-child(2) .footer__menu_link::before {
+  background: #5865f2; /* Discord */
+}
+
+.footer__menu_item:nth-child(3) .footer__menu_link::before {
+  background: #0088cc; /* Telegram */
+}
+
+.footer__menu_item:nth-child(4) .footer__menu_link::before {
+  background: #00b894; /* Website (зелений як іконка доступу/глобусу) */
+}
