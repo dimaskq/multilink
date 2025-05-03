@@ -16,6 +16,8 @@ body {
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.792);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes wave {
@@ -62,6 +64,10 @@ body {
   background: inherit;
   z-index: -1;
   filter: blur(3px);
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .menu {
@@ -211,7 +217,7 @@ body {
 .footer__menu {
   display: flex;
   justify-content: center;
-  margin: 10% 0;
+  margin: 1% 0;
 }
 
 .footer__menu_item {
@@ -276,4 +282,8 @@ body {
 
 .footer__menu_item:nth-child(4) .footer__menu_link::before {
   background: #00b894; /* Website (зелений як іконка доступу/глобусу) */
+}
+
+.footer__menu_item:nth-child(5) .footer__menu_link::before {
+  background: #000000; /* Website (зелений як іконка доступу/глобусу) */
 }
