@@ -5,19 +5,20 @@ body {
       rgba(0, 0, 0, 0.6) 100%
     ),
     url("../img/bg.png");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin: 0;
 }
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.792);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 @keyframes wave {
@@ -51,7 +52,7 @@ body {
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 3.5rem;
-    padding: 40% 0 0 0;
+    padding: 20% 0 0 0;
   }
 }
 .header::after {
@@ -67,7 +68,11 @@ body {
 }
 
 .main {
-  flex-grow: 1;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
@@ -212,6 +217,10 @@ body {
 .menu__link:hover span:nth-child(6) {
   transform: scaleX(1);
   transform-origin: right;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 .footer__menu {
